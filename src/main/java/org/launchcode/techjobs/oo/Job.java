@@ -17,7 +17,7 @@ public class Job {
 
     public Job(){
       id = nextId;
-      nextId++;  //?is this part needed?
+      nextId++;
     }
 
    public Job(String name, Employer employer, Location location,PositionType positionType, CoreCompetency coreCompetency){
@@ -35,6 +35,41 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    public String toString(){
+        String sample=  "\nID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n";
+//         "\nID:  _______\n" +
+//        "Name: _______\n" +
+//        "Employer: _______\n" +
+//        "Location: _______\n" +
+//        "Position Type: _______\n" +
+//        "Core Competency: _______\n";
+if(name == ""){
+    name =  "Data not available";
+} else if (employer == null) {
+    employer.setValue("Data not available");
+} else if (location == null) {
+    location.setValue("Data not available");
+} else if (positionType == null) {
+    positionType.setValue("Data not available");
+} else if (coreCompetency == null) {
+    coreCompetency.setValue("Data not available");
+} else {
+
+        System.out.println(sample);
+}
+
+
+
+
+        return sample;
+    }
+
     public String getName() {
         return name;
     }
