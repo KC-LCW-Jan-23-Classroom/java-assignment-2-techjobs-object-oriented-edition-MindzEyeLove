@@ -36,41 +36,6 @@ public class Job {
         return id;
     }
 
-    public String toString(){
-
-        String sample =  "\nID: " + id + "\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n";
-
-         String emptySample =  "\nID:  _______\n" +
-                "Name: _______\n" +
-                "Employer: _______\n" +
-                "Location: _______\n" +
-                "Position Type: _______\n" +
-                "Core Competency: _______\n";
-
-
-if(name.isBlank()){
-   name +=  "Data not available";
-} else if (employer.equals(null)) {
-   employer.setValue("Data not available");
-} else if (location.equals(null)) {
-    location.setValue("Data not available");
-} else if (positionType.equals(null)) {
-    positionType.setValue("Data not available");
-} else if (coreCompetency.equals(null)) {
-    coreCompetency.setValue("Data not available");
-} else if(name.isBlank() && employer.equals(null) && location.equals(null) && positionType.equals(null) && coreCompetency.equals(null)) {
-        System.out.println("OOPS! This job does not seem to exist." + emptySample);
-} else {
-  System.out.println(sample);
-}
-return sample;
-    }
-
     public String getName() {
         return name;
     }
@@ -100,6 +65,35 @@ return sample;
     }
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
+    }
+
+    public String toString() {
+
+
+        String sample = null;
+        if (name.isBlank()) {
+            name += "Data not available";
+        } else if (employer.equals(null)) {
+            employer.setValue("Data not available");
+        } else if (location.equals(null)) {
+            location.setValue("Data not available");
+        } else if (positionType.equals(null)) {
+            positionType.setValue("Data not available");
+        } else if (coreCompetency.equals(null)) {
+            coreCompetency.setValue("Data not available");
+        } else if (name.isBlank() && employer.equals(null) && location.equals(null) && positionType.equals(null) && coreCompetency.equals(null)) {
+            return "OOPS! This job does not seem to exist.";
+        } else {
+
+            sample = "\nID: " + id + "\n" +
+                    "Name: " + name + "\n" +
+                    "Employer: " + employer + "\n" +
+                    "Location: " + location + "\n" +
+                    "Position Type: " + positionType + "\n" +
+                    "Core Competency: " + coreCompetency + "\n";
+        }
+
+        return sample;
     }
 
     @Override
