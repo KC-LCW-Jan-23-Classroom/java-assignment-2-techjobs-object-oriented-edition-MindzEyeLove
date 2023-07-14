@@ -37,37 +37,38 @@ public class Job {
     }
 
     public String toString(){
-        String sample=  "\nID: " + id + "\n" +
+
+        String sample =  "\nID: " + id + "\n" +
                 "Name: " + name + "\n" +
                 "Employer: " + employer + "\n" +
                 "Location: " + location + "\n" +
                 "Position Type: " + positionType + "\n" +
                 "Core Competency: " + coreCompetency + "\n";
-//         "\nID:  _______\n" +
-//        "Name: _______\n" +
-//        "Employer: _______\n" +
-//        "Location: _______\n" +
-//        "Position Type: _______\n" +
-//        "Core Competency: _______\n";
-if(name == ""){
-    name =  "Data not available";
-} else if (employer == null) {
-    employer.setValue("Data not available");
-} else if (location == null) {
+
+         String emptySample =  "\nID:  _______\n" +
+                "Name: _______\n" +
+                "Employer: _______\n" +
+                "Location: _______\n" +
+                "Position Type: _______\n" +
+                "Core Competency: _______\n";
+
+
+if(name.isBlank()){
+   name +=  "Data not available";
+} else if (employer.equals(null)) {
+   employer.setValue("Data not available");
+} else if (location.equals(null)) {
     location.setValue("Data not available");
-} else if (positionType == null) {
+} else if (positionType.equals(null)) {
     positionType.setValue("Data not available");
-} else if (coreCompetency == null) {
+} else if (coreCompetency.equals(null)) {
     coreCompetency.setValue("Data not available");
+} else if(name.isBlank() && employer.equals(null) && location.equals(null) && positionType.equals(null) && coreCompetency.equals(null)) {
+        System.out.println("OOPS! This job does not seem to exist." + emptySample);
 } else {
-
-        System.out.println(sample);
+  System.out.println(sample);
 }
-
-
-
-
-        return sample;
+return sample;
     }
 
     public String getName() {

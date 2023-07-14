@@ -71,7 +71,7 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField(){
         Job testJob1 = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-assertEquals(testJob1.getName(), "");
+assertEquals(testJob1.getName(), "Data not available");
     }
 
 
