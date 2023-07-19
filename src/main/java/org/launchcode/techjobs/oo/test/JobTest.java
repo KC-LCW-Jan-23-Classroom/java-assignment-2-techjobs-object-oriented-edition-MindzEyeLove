@@ -57,12 +57,12 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
         Job testJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String expected= "\nID: " + testJob1.getId() + "\n" +
-                "Name: " + testJob1.getName() + "\n" +
-                "Employer: " + testJob1.getEmployer() + "\n" +
-                "Location: " + testJob1.getLocation() + "\n" +
-                "Position Type: " + testJob1.getPositionType() + "\n" +
-                "Core Competency: " + testJob1.getCoreCompetency() + "\n";
+        String expected= "\nID: 1\n" +
+                "Name: Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Desert\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Persistence\n";
         assertEquals(testJob1.toString(), expected);
     }
 
@@ -70,7 +70,7 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField(){
-        Job testJob1 = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testJob1 = new Job("",  new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 assertEquals(testJob1.getName(), "Data not available");
     }
 

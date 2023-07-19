@@ -73,7 +73,7 @@ public class Job {
         String sample = null;
         if (name.isBlank()) {
             name += "Data not available";
-        } else if (employer.equals(null)) {
+        } else if (employer == null) {
             employer.setValue("Data not available");
         } else if (location.equals(null)) {
             location.setValue("Data not available");
@@ -106,7 +106,7 @@ public class Job {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(id);
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
