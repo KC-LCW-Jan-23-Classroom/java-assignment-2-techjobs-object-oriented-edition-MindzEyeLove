@@ -70,20 +70,21 @@ public class Job {
     public String toString() {
 
 
-        String sample = null;
+        String sample;
+        if (name.isBlank() && employer.getValue().isBlank() && location.getValue().isBlank() && positionType.getValue().isBlank() && coreCompetency.getValue().isBlank()) {
+            return "OOPS! This job does not seem to exist.";
+        }
         if (name.isBlank()) {
             name += "Data not available";
-        } else if (employer == null) {
+        } if (employer.getValue().isBlank()) {
             employer.setValue("Data not available");
-        } else if (location.equals(null)) {
+        }  if (location.getValue().isBlank()) {
             location.setValue("Data not available");
-        } else if (positionType.equals(null)) {
+        } if (positionType.getValue().isBlank()) {
             positionType.setValue("Data not available");
-        } else if (coreCompetency.equals(null)) {
+        } if (coreCompetency.getValue().isBlank()) {
             coreCompetency.setValue("Data not available");
-        } else if (name.isBlank() && employer.equals(null) && location.equals(null) && positionType.equals(null) && coreCompetency.equals(null)) {
-            return "OOPS! This job does not seem to exist.";
-        } else {
+        }
 
             sample = "\nID: " + id + "\n" +
                     "Name: " + name + "\n" +
@@ -91,7 +92,7 @@ public class Job {
                     "Location: " + location + "\n" +
                     "Position Type: " + positionType + "\n" +
                     "Core Competency: " + coreCompetency + "\n";
-        }
+
 
         return sample;
     }
